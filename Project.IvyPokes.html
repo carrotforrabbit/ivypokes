@@ -52,7 +52,7 @@
         color: black;
         font-family: "Reenie Beanie", cursive;
         background-color: #dbd7d7;
-        border-radius: 50px;
+        border-radius: 25px;
         display: block;
         font-size: 36px;
         margin: 0 auto;
@@ -77,13 +77,14 @@
 
       .ivyPokesHeading {
         width: 100%;
-        height: 600px;
+        height: 700px;
         background-size: cover;
+        background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         margin: 0 auto;
         display: block;
-        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/032/269/original/photo_2022-04-19_16.33.26.jpeg?1650382435");
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/032/524/original/9DFCD2E5-8965-4503-9598-C8B7C18C2915_%281%29.png?1650644127");
       }
 
       .headings {
@@ -179,15 +180,21 @@
         color: black;
         width: 50%;
         margin: 0 auto;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         cursor: pointer;
+        list-style: none;
       }
 
       .photoRow {
         width: 20%;
         display: inline-block;
         padding: 5 px;
+        transition: transform 0.2s;
+      }
+
+      .photoRow:hover {
+        transform: scale(1.1);
       }
 
       .imgContainer {
@@ -201,6 +208,25 @@
       .bookNow {
         background-color: black;
         padding: 30px;
+      }
+
+      .footer {
+        margin: 0 auto;
+        display: block;
+        background-color: #3e5271;
+        color: #dbd7d7;
+        font-size: 15px;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      .instagramIcon {
+        height: 30px;
+        width: 30px;
+        margin: 0 auto;
+        display: block;
+        padding: 10px;
+        background-color: #3e5271;
       }
     </style>
   </head>
@@ -292,6 +318,7 @@
       <details>
         <summary class="question">
           <strong> What is Handpoke?</strong>
+          <span class="questionIcon">▿</span>
         </summary>
         <p class="info">
           Handpoke is a tattoo technique. It is not a style like many people
@@ -304,6 +331,7 @@
       <details>
         <summary class="question">
           <strong> Pro's and Con's of Handpoke</strong>
+          <span class="questionIcon">▿</span>
         </summary>
         <p class="info">
           Handpoke tattoos are less invasive for the skin which makes them heal
@@ -320,6 +348,7 @@
       <details>
         <summary class="question">
           <strong> To Do Before the Session</strong>
+          <span class="questionIcon">▿</span>
         </summary>
         <p class="info">
           Before the session I recommend the following:
@@ -338,7 +367,10 @@
         </p>
       </details>
       <details>
-        <summary class="question"><strong> Aftercare</strong></summary>
+        <summary class="question">
+          <strong> Aftercare</strong>
+          <span class="questionIcon">▿</span>
+        </summary>
         <p class="info">
           Healing process may take up to two weeks. The complete healing and
           skin regeneration happens in a month after the session. During the
@@ -355,7 +387,10 @@
         </p>
       </details>
       <details>
-        <summary class="question"><strong> About designs</strong></summary>
+        <summary class="question">
+          <strong> About designs</strong>
+          <span class="questionIcon">▿</span>
+        </summary>
         <p class="info">
           I can draw a special design for you upon request. Please share as much
           information and details on the desired design so that I could come up
@@ -374,8 +409,32 @@
     <div class="bookNow">
       <button>Book Your Session Now</button>
     </div>
-    <div class="beigeBackground">
-      <p class="blackText">Coded by Anna Parasyuta</p>
+    <div class="footer">
+      <a href="https://www.instagram.com/ivy.pokes/" target="blank">
+        <img
+          class="instagramIcon"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/032/480/original/pngfind.com-instagram-png-23339.png?1650625820"
+          alt="instagram icon"
+      /></a>
+      <p>Coded by Anna Parasyuta</p>
     </div>
+    <script>
+      function bookNow() {
+        let age = prompt("Thank you for your interest! Please share your age");
+        if (age > 18) {
+          let name = prompt("What is your name?");
+          let email = prompt("What is your contact email address?");
+          let details = prompt("Descpribe your desired tattoo design please");
+          alert(
+            `Thank you, ${name}, for the details! I will be in touch shortly!✨`
+          );
+        } else {
+          alert(`Sorry! Come back when you turn 18✨`);
+        }
+      }
+
+      let bookNowButton = document.querySelector("button");
+      bookNowButton.addEventListener("click", bookNow);
+    </script>
   </body>
 </html>
